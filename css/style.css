@@ -1,0 +1,527 @@
+/********** Template CSS **********/
+
+/*------- Fuente Tipografica------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* ----- Fuente de Color ---------/
+
+#372C20  cafe oscuro
+#6B5033  cafe claro
+#CEBFAF  beige oscuro
+#E7E8EC  gris claro
+#E4DED6  beige claro
+#DBAB7B  naranja
+#FFFFFF  blanco
+*/
+
+:root {
+  --primary: #dbab7b;
+  --secondary: rgb(84, 84, 84);
+  --light: #ffffff;
+  --dark: #372c20;
+}
+
+body {
+  background-color: rgb(245, 245, 247);
+  font-family: "Nunito", sans-serif;
+  box-shadow: rgb(120, 120, 121);
+}
+
+/*-- Cookies --*/
+.cookie-message {
+  background-color: rgb(255, 255, 255);
+  color: #333;
+  font-size: 12px;
+  border: 1px solid rgb(221, 221, 221);
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+  text-align: center;
+  box-shadow: hwb(0 98% 1% / 0.06);
+  border-radius: 10px;
+}
+
+.text-md-end {
+  margin-top: 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.cookie-message p {
+  margin-bottom: 10px;
+}
+
+.cookie-message button {
+  margin: 10px;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+  color: rgb(30, 30, 30);
+  padding: 13px;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.container-políticas {
+  width: 70%;
+  margin: 40px;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.06);
+}
+
+.container-políticas h2 {
+  align-items: center;
+  justify-content: center;
+}
+
+/*-- End of the Cookies --*/
+
+h1,
+h2,
+h3 {
+  font-family: "Nunito", sans-serif;
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+.py-6 {
+  background-color: rgb(255, 255, 255);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.my-6 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+}
+
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*** Button ***/
+.btn-what-nav {
+  width: 40px;
+  height: auto;
+  margin-right: 80px;
+}
+
+.btn {
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.btn.btn-primary {
+  color: #ffffff;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 35px 15px;
+  color: var(--light);
+  outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+.navbar.fixed-top {
+  transition: 0.5s;
+}
+
+.col-6 .img-productos,
+.col-6 .img-fluid,
+.container-xxl,
+.col-lg-4 .product-item {
+  border-radius: 20px;
+}
+
+.mb-2 .fa {
+  color: rgb(220, 171, 123);
+  transition: 1ms;
+}
+
+.mb-2 {
+  color: rgb(220, 171, 123) !important;
+  transition: 1ms;
+}
+
+.mb-2:hover {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* ----------- Footer -------------- */
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--dark);
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    top: 100%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+/*** Header ***/
+.header-carousel .owl-carousel-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.owl-carousel-inner .container .row {
+  margin-bottom: 35%;
+}
+
+@media (max-width: 768px) {
+  .header-carousel .owl-carousel-item {
+    position: relative;
+    min-height: 600px;
+  }
+
+  .header-carousel .owl-carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .header-carousel .owl-carousel-item p {
+    font-size: 16px !important;
+  }
+}
+
+.header-carousel .owl-nav {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: -40px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-carousel .owl-nav::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transform: rotate(45deg);
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+  position: relative;
+  font-size: 40px;
+  color: var(--primary);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+  color: var(--dark);
+}
+
+.page-header {
+  margin-bottom: 6rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/carousel-1.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--light);
+}
+
+h1 {
+  text-align: center;
+}
+
+.row h2 {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .owl-carousel-inner .container .row {
+    margin-bottom: 60%;
+  }
+  .navbar-brand img {
+    width: 145px;
+  }
+}
+
+/*** Facts ***/
+.fact-item {
+  transition: 0.5s;
+}
+
+.fact-item:hover {
+  margin-top: -10px;
+  background: #ffffff !important;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+}
+
+/*** About ***/
+.img-twice::before {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 80%;
+  top: 10%;
+  left: 20%;
+  background: var(--primary);
+  border: 25px solid var(--light);
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.container-about {
+  background-color: #372c20;
+}
+
+.container .bg-primary {
+  background: var(--primary) !important;
+}
+
+.row-title {
+  justify-content: center;
+  text-align: center;
+}
+
+/*** Product ***/
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.product-item {
+  transition: 0.5s;
+}
+
+.product-item:hover {
+  background: var(--primary) !important;
+}
+
+.product-item:hover * {
+  color: var(--light);
+}
+
+.product-item:hover .border-primary {
+  border-color: var(--light) !important;
+}
+
+.product-item .product-overlay {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.product-item:hover .product-overlay {
+  height: 100%;
+  opacity: 1;
+}
+
+/*** Team ***/
+.team-item .team-text {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.team-item .team-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  transition: 0.5s;
+}
+
+.team-item:hover .team-title {
+  top: -100px;
+}
+
+.team-item .team-social {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  transition: 0.5s;
+}
+
+.team-item .team-social .btn {
+  margin: 0 3px;
+}
+
+.team-item:hover .team-social {
+  top: 0;
+}
+
+/*** Footer ***/
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: var(--light);
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--light);
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  color: var(--primary);
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.copyright {
+  background: #111111;
+}
+
+.copyright a {
+  color: var(--primary);
+}
+
+.copyright a:hover {
+  color: var(--light);
+}
+
+@media (min-width: 575px) {
+  .navbar-brand img {
+    width: 145px;
+  }
+}
