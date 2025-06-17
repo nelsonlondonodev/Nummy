@@ -12,6 +12,11 @@
     acceptCookiesButton.addEventListener("click", function () {
       cookieMessage.style.display = "none";
     });
+    // Hide the cookie message when the user clicks the "X" button
+    var closeButton = document.getElementById("close-cookies");
+    closeButton.addEventListener("click", function () {
+      cookieMessage.style.display = "none";
+    });
   });
 
   // Spinner
