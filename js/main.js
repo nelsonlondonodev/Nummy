@@ -1,22 +1,49 @@
 (function ($) {
   "use strict";
 
-  // Evento de clic en las coookies
+  // Gestión de Cookies con localStorage
   document.addEventListener("DOMContentLoaded", function () {
-    // Show the cookie message
-    var cookieMessage = document.getElementById("cookie-message");
-    cookieMessage.style.display = "block";
+    var cookieBanner = document.getElementById("cookie-banner");
+    var acceptBtn = document.getElementById("accept-cookies");
+    var rejectBtn = document.getElementById("reject-cookies");
 
-    // Hide the cookie message when the user clicks "Accept Cookies"
-    var acceptCookiesButton = document.getElementById("accept-cookies");
-    acceptCookiesButton.addEventListener("click", function () {
-      cookieMessage.style.display = "none";
-    });
-    // Hide the cookie message when the user clicks the "X" button
-    var closeButton = document.getElementById("close-cookies");
-    closeButton.addEventListener("click", function () {
-      cookieMessage.style.display = "none";
-    });
+    // Verificar si ya existe consentimiento
+    if (!localStorage.getItem("nummy_cookies_consent")) {
+      // Si no hay item en localStorage, mostramos el banner con un pequeño retraso para la animación
+      setTimeout(function() {
+        cookieBanner.style.display = "flex";
+      }, 1000);
+    }
+
+    // Lógica para Aceptar
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("nummy_cookies_consent", "accepted");
+        cookieBanner.style.display = "none";
+        // Aquí se podrían activar scripts de terceros (GA, Pixel, etc.)
+      });
+    }
+
+    // Lógica para Rechazar (o Configuración básica de 'solo necesarias')
+    if (rejectBtn) {
+      rejectBtn.addEventListener("click", function () {
+        localStorage.setItem("nummy_cookies_consent", "rejected");
+        cookieBanner.style.display = "none";
+        // Aquí nos aseguramos de NO cargar scripts de terceros
+      });
+    }
+    
+    // Reabrir configuración desde el footer
+    var openSettingsBtn = document.getElementById("open-cookie-settings");
+    if (openSettingsBtn) {
+      openSettingsBtn.addEventListener("click", function() {
+        cookieBanner.style.display = "flex";
+        // Opcional: reiniciar animación
+        cookieBanner.style.animation = 'none';
+        cookieBanner.offsetHeight; /* trigger reflow */
+        cookieBanner.style.animation = 'slideUp 0.5s ease-out forwards';
+      });
+    }
   });
 
   // Spinner

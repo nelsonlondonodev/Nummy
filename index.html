@@ -84,23 +84,23 @@
 
   <body>
     <!--/ Message of the cookies /-->
-  <div id="cookie-message" class="cookie-message">
-    <h6><b>Administrar el consentimiento de las cookies</b></h6>
-    <div>
-    <p id="close-cookies" class="text-md-end"> X </p>
-  </div>
-    <p>
-      Con el fin de brindar óptimas experiencias, empleamos tecnologías como las cookies para almacenar y/o acceder a la información del dispositivo. La aceptación de estas tecnologías nos autoriza a procesar datos como el comportamiento de navegación o identificaciones únicas en este sitio. Negarse o revocar el consentimiento puede tener un impacto adverso en ciertas características y funciones.
-    </p>
-    <button id="accept-cookies" class="btn btn-primary">Aceptar y cerrar</button>
-    <button id="modify-cookies" class="btn btn-primary">Configurar cookies</button>
-    <div>
-      <p>
-        <a href="#politicas.html" target="_blank"><b>Política de cookies</b></a>
+    <!--/ Modern Cookie Banner /-->
+    <div id="cookie-banner" class="cookie-banner-container">
+      <div class="cookie-header">
+        <h6>🍪 Valoramos tu privacidad</h6>
+      </div>
+      <p class="cookie-text">
+        Usamos cookies para mejorar tu experiencia en <b>Nummy</b>. Algunas son esenciales para que el sitio funcione, mientras que otras nos ayudan a entender cómo lo usas.
       </p>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Aceptar todas</button>
+        <button id="reject-cookies" class="btn-cookie btn-cookie-reject">Rechazar no esenciales</button>
+      </div>
+      <div class="cookie-policy-link">
+        <a href="#politicas.html" target="_blank">Leer Política de Cookies</a>
+      </div>
     </div>
-  </div>
-  <!--/ End message of the cookies /-->
+    <!--/ End Modern Cookie Banner /-->
   
     <!-- Spinner Start -->
     <div
@@ -466,6 +466,9 @@ Siendo una soñadora incansable y amante de los desafíos, estoy emocionada por 
             <a class="btn btn-link" href="">Nuestros Servicios</a>
             <a class="btn btn-link" href="">Terminos Y Condiciones</a>
           </div>-->
+          <div class="col-12 text-center mt-3">
+             <button id="open-cookie-settings" class="btn-cookie-settings-link">🍪 Configurar cookies</button>
+          </div>
         </div>
       </div>
     </div>
