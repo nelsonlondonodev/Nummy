@@ -673,14 +673,36 @@ h1 {
 
 .copyright {
   background: #111111;
+  font-size: 0.85rem; /* Reducir tamaño de letra */
+  color: #777; /* Color gris oscuro para el texto general */
 }
 
+/* Enlaces del copyright (Tu nombre) */
 .copyright a {
   color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .copyright a:hover {
   color: var(--light);
+}
+
+/* Estilo específico para los créditos de la plantilla para hacerlos discretos */
+.col-md-6.text-md-end {
+  font-size: 0.75rem; /* Un poco más pequeño que el resto */
+  opacity: 0.6; /* Semitransparente */
+}
+
+.col-md-6.text-md-end a {
+  color: #999; /* Gris suave, no el primario llamativo */
+  font-weight: 400; /* Peso normal */
+  border-bottom: 1px dotted #555; /* Subrayado sutil */
+}
+
+.col-md-6.text-md-end a:hover {
+  color: #bbb; /* Cambio sutil al hover */
+  border-bottom-color: #bbb;
 }
 
 @media (min-width: 575px) {
