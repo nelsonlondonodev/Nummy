@@ -344,6 +344,51 @@ h6,
   }
 }
 
+/* Ticker de Noticias (Barra Superior) */
+.news-ticker-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 40px; /* Ajustar altura según necesidad */
+  display: flex;
+  align-items: center;
+}
+
+.news-ticker-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 40s linear infinite; /* Ajustar velocidad */
+}
+
+.news-ticker-wrapper p {
+  display: inline-block;
+  margin: 0;
+  padding-right: 50px; /* Espacio entre mensajes */
+  color: var(--light);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+}
+
+.news-ticker-wrapper p strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Detener animación al pasar el ratón */
+.news-ticker-container:hover .news-ticker-wrapper {
+  animation-play-state: paused;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* Empieza fuera por la derecha */
+  }
+  100% {
+    transform: translateX(-100%); /* Termina fuera por la izquierda */
+  }
+}
+
 /*** Header ***/
 .header-carousel .owl-carousel-inner {
   position: absolute;
