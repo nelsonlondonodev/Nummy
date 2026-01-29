@@ -350,21 +350,35 @@ h6,
   white-space: nowrap;
   position: relative;
   width: 100%;
-  height: 40px; /* Ajustar altura según necesidad */
+  height: 40px;
   display: flex;
   align-items: center;
+  /* Fondo oscuro para que coincida con el tema */
+  background-color: var(--dark);
 }
 
 .news-ticker-wrapper {
-  display: inline-block;
+  display: flex;
   white-space: nowrap;
-  animation: scrollText 40s linear infinite; /* Ajustar velocidad */
+  /* La animación mueve el contenido hacia la izquierda */
+  animation: scrollText 30s linear infinite;
+  /* Necesitamos suficiente ancho para que no se corte, fit-content ayuda */
+  width: max-content; /* Usar max-content para asegurar que ocupe todo lo necesario */
+}
+
+/* Estilo para los bloques de contenido duplicados */
+.ticker-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Evitar que se encogan */
+  white-space: nowrap; /* Asegurar que el texto no salte de línea */
 }
 
 .news-ticker-wrapper p {
   display: inline-block;
   margin: 0;
-  padding-right: 50px; /* Espacio entre mensajes */
+  /* Espaciado uniforme a ambos lados del item */
+  padding: 0 40px; 
   color: var(--light);
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
@@ -382,10 +396,11 @@ h6,
 
 @keyframes scrollText {
   0% {
-    transform: translateX(100%); /* Empieza fuera por la derecha */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); /* Termina fuera por la izquierda */
+    /* Mueve el contenedor la mitad de su ancho total (asumiendo que hemos duplicado el contenido exactamente una vez) */
+    transform: translateX(-50%);
   }
 }
 
