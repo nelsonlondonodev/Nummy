@@ -84,7 +84,8 @@
 
   // Header carousel
   $(".header-carousel").owlCarousel({
-    autoplay: false,
+    autoplay: true,
+    autoplayTimeout: 5000,
     smartSpeed: 1500,
     loop: true,
     nav: true,
