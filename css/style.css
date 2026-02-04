@@ -581,6 +581,54 @@ h1 {
   opacity: 1;
 }
 
+/*** Gallery ***/
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(55, 44, 32, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item .gallery-overlay .btn {
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.gallery-item:hover .gallery-overlay .btn {
+  transform: translateY(0);
+}
+
 /*** Team ***/
 .team-item .team-text {
   position: relative;
