@@ -541,20 +541,27 @@ h1 {
 
 /*** Product & Gallery Modern Cards ***/
 .product-item, .gallery-item {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
+.product-item {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
 .product-item:hover, .gallery-item:hover {
   transform: translateY(-10px);
+}
+
+.product-item:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   border-color: var(--primary);
 }
@@ -563,6 +570,7 @@ h1 {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1 / 1;
+  border-radius: 20px;
 }
 
 .product-item img, .gallery-item img {
@@ -576,13 +584,9 @@ h1 {
   transform: scale(1.1);
 }
 
-.product-item .product-info, .gallery-item .gallery-info {
+.product-info {
   padding: 25px;
   text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .product-price-badge {
@@ -603,13 +607,16 @@ h1 {
 .product-overlay, .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(55, 44, 32, 0.4);
+  background: rgba(55, 44, 32, 0.6);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 3;
+  padding: 20px;
+  text-align: center;
 }
 
 .product-item:hover .product-overlay, 
@@ -629,6 +636,8 @@ h1 {
   font-size: 1.2rem;
   transform: scale(0.5);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .product-item:hover .btn-modern-action,
@@ -636,33 +645,86 @@ h1 {
   transform: scale(1);
 }
 
-.btn-modern-action:hover {
-  background: var(--dark);
-  color: white;
+.gallery-overlay h4 {
+    color: white;
+    margin-bottom: 5px;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.1s;
 }
 
-/*** Gallery (Override) ***/
-#galeria .gallery-item {
-  height: 400px;
+.gallery-overlay p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.2s;
 }
 
-#galeria .gallery-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: white;
-  padding: 20px;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+.gallery-item:hover .gallery-overlay h4,
+.gallery-item:hover .gallery-overlay p {
+    transform: translateY(0);
 }
 
-#galeria .gallery-item:hover .gallery-info {
-  opacity: 1;
-  transform: translateY(0);
+/*** Lightbox Modal ***/
+.modal-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-lightbox.active {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-lightbox.active .modal-img {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--primary);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 576px) {
+    .modal-close {
+        top: -40px;
+        right: 10px;
+    }
 }
 
 /*** Team ***/

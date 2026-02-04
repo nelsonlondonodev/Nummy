@@ -312,14 +312,12 @@
               <div class="img-wrapper">
                 <img class="img-fluid" src="img/reposteria-creativa-nummy-1.jpeg" alt="Tarta personalizada Nummy" />
                 <div class="gallery-overlay">
-                  <a href="img/reposteria-creativa-nummy-1.jpeg" target="_blank" class="btn-modern-action">
+                  <div class="btn-modern-action open-lightbox" data-img="img/reposteria-creativa-nummy-1.jpeg">
                     <i class="fa fa-eye"></i>
-                  </a>
+                  </div>
+                  <h4 class="h6">Tarta de Chocolate</h4>
+                  <p class="small">Decoración temática personalizada</p>
                 </div>
-              </div>
-              <div class="gallery-info">
-                <h4 class="h6 mb-1">Tarta de Chocolate</h4>
-                <p class="small mb-0">Decoración temática personalizada</p>
               </div>
             </div>
           </div>
@@ -328,14 +326,12 @@
               <div class="img-wrapper">
                 <img class="img-fluid" src="img/reposteria-creativa-nummy-2.jpeg" alt="Tarta personalizada Nummy" />
                 <div class="gallery-overlay">
-                  <a href="img/reposteria-creativa-nummy-2.jpeg" target="_blank" class="btn-modern-action">
+                  <div class="btn-modern-action open-lightbox" data-img="img/reposteria-creativa-nummy-2.jpeg">
                     <i class="fa fa-eye"></i>
-                  </a>
+                  </div>
+                  <h4 class="h6">Mesa Dulce Infantil</h4>
+                  <p class="small">Diseño creativo para eventos</p>
                 </div>
-              </div>
-              <div class="gallery-info">
-                <h4 class="h6 mb-1">Mesa Dulce Infantil</h4>
-                <p class="small mb-0">Diseño creativo para eventos</p>
               </div>
             </div>
           </div>
@@ -545,5 +541,13 @@
 
     <!-- Template Javascript -->
     <script src="./js/main.js"></script>
+
+    <!-- Lightbox Modal Structure -->
+    <div id="lightbox-modal" class="modal-lightbox">
+        <div class="modal-content-wrapper">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="Vista ampliada" class="modal-img" id="modal-img">
+        </div>
+    </div>
   </body>
 </html>
