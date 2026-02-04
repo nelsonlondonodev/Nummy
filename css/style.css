@@ -541,7 +541,6 @@ h1 {
 
 /*** Product & Gallery Modern Cards ***/
 .product-item, .gallery-item {
-  background: transparent;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -571,6 +570,13 @@ h1 {
   overflow: hidden;
   aspect-ratio: 1 / 1;
   border-radius: 20px;
+  background: #fff; /* Fondo blanco interno para cargar imágenes */
+}
+
+.gallery-item {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .product-item img, .gallery-item img {
@@ -607,7 +613,7 @@ h1 {
 .product-overlay, .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(55, 44, 32, 0.6);
+  background: rgba(55, 44, 32, 0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -638,6 +644,7 @@ h1 {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin-bottom: 15px;
   cursor: pointer;
+  border: none;
 }
 
 .product-item:hover .btn-modern-action,
@@ -648,13 +655,15 @@ h1 {
 .gallery-overlay h4 {
     color: white;
     margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
     transform: translateY(10px);
     transition: all 0.4s ease 0.1s;
 }
 
 .gallery-overlay p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
     transform: translateY(10px);
     transition: all 0.4s ease 0.2s;
 }
