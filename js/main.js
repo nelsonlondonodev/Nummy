@@ -10,16 +10,18 @@
     // Verificar si ya existe consentimiento
     if (!localStorage.getItem("nummy_cookies_consent")) {
       // Si no hay item en localStorage, mostramos el banner con un pequeño retraso para la animación
-      setTimeout(function() {
-        cookieBanner.style.display = "flex";
-      }, 1000);
+      if (cookieBanner) {
+         setTimeout(function() {
+            cookieBanner.style.display = "flex";
+         }, 1000);
+      }
     }
 
     // Lógica para Aceptar
     if (acceptBtn) {
       acceptBtn.addEventListener("click", function () {
         localStorage.setItem("nummy_cookies_consent", "accepted");
-        cookieBanner.style.display = "none";
+        if (cookieBanner) cookieBanner.style.display = "none";
         // Aquí se podrían activar scripts de terceros (GA, Pixel, etc.)
       });
     }
@@ -28,14 +30,14 @@
     if (rejectBtn) {
       rejectBtn.addEventListener("click", function () {
         localStorage.setItem("nummy_cookies_consent", "rejected");
-        cookieBanner.style.display = "none";
+        if (cookieBanner) cookieBanner.style.display = "none";
         // Aquí nos aseguramos de NO cargar scripts de terceros
       });
     }
     
     // Reabrir configuración desde el footer
     var openSettingsBtn = document.getElementById("open-cookie-settings");
-    if (openSettingsBtn) {
+    if (openSettingsBtn && cookieBanner) {
       openSettingsBtn.addEventListener("click", function() {
         cookieBanner.style.display = "flex";
         // Opcional: reiniciar animación
