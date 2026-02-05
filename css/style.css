@@ -946,3 +946,36 @@ h1 {
     font-size: 25px;
   }
 }
+
+/*** Modern Form Styles ***/
+.modern-form .form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--light);
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.modern-form .form-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(219, 171, 123, 0.2);
+  color: var(--light);
+  outline: none;
+}
+
+.modern-form .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#form-feedback.success {
+  color: #28a745;
+  font-weight: 600;
+}
+
+#form-feedback.error {
+  color: #dc3545;
+  font-weight: 600;
+}
+

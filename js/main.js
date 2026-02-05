@@ -134,5 +134,47 @@
         }
       });
     }
+
+    // Manejo del Formulario de Contacto (Preparado para n8n)
+    const contactForm = document.getElementById('contact-form');
+    const formFeedback = document.getElementById('form-feedback');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value,
+          source: 'Sitio Web Nummy'
+        };
+
+        // Feedback visual inmediato
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Enviando...';
+
+        // NOTA: Aquí es donde conectarás tu webhook de n8n más adelante
+        // fetch('TU_URL_DE_N8N_AQUI', { method: 'POST', body: JSON.stringify(formData) })
+
+        // Simulamos envío por ahora
+        setTimeout(() => {
+          formFeedback.style.display = 'block';
+          formFeedback.className = 'mt-3 text-center success';
+          formFeedback.innerText = '¡Gracias! Hemos recibido tu solicitud correctamente.';
+          
+          contactForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalBtnText;
+
+          // Ocultar mensaje después de 5 segundos
+          setTimeout(() => {
+            formFeedback.style.display = 'none';
+          }, 5000);
+        }, 1500);
+      });
+    }
   });
 })(jQuery);
