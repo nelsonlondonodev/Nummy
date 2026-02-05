@@ -176,5 +176,34 @@
         }, 1500);
       });
     }
+
+    // Lógica avanzada para Menú Móvil
+    const navbarCollapse = document.getElementById('navbarCollapse');
+    const navOverlay = document.getElementById('nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-item.nav-link');
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+    // Mostrar/Ocultar Overlay según el estado del menú
+    navbarCollapse.addEventListener('show.bs.collapse', function () {
+      navOverlay.classList.add('active');
+    });
+
+    navbarCollapse.addEventListener('hide.bs.collapse', function () {
+      navOverlay.classList.remove('active');
+    });
+
+    // Cerrar al hacer click en el overlay (fuera del menú)
+    navOverlay.addEventListener('click', function () {
+      bsCollapse.hide();
+    });
+
+    // Cerrar al hacer click en un enlace (para navegación interna #)
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992) {
+          bsCollapse.hide();
+        }
+      });
+    });
   });
 })(jQuery);

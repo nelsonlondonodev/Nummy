@@ -1083,3 +1083,68 @@ h1 {
   color: var(--primary);
 }
 
+/*** Navbar Mobile Optimization ***/
+#nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Hamburger Icon Animation */
+.hamburger-icon {
+  width: 25px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--dark);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Transición a X */
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Asegurar que el navbar collapse esté encima del overlay */
+.navbar-collapse {
+  z-index: 999;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+}
+
