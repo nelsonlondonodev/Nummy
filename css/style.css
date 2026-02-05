@@ -466,6 +466,22 @@ h6,
   .owl-carousel-inner .container {
     padding-top: 60px; /* Añadido para evitar que el texto suba demasiado cerca del logo en móviles */
   }
+
+  /* Optimización de espacios en secciones */
+  .py-6, .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .footer .container.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Reducir gutters de Bootstrap que son muy anchos en móvil */
+  .row.g-5 {
+    --bs-gutter-y: 2rem !important;
+  }
 }
 
 .header-carousel .owl-nav {
