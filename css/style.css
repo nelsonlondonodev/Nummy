@@ -484,6 +484,42 @@ h6,
   }
 }
 
+/*** FAQ Accordion Styles ***/
+.modern-accordion .accordion-item {
+  background-color: #fcfcfc;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent !important;
+}
+
+.modern-accordion .accordion-item:hover {
+  border-left: 4px solid var(--primary) !important;
+  transform: translateX(5px);
+}
+
+.modern-accordion .accordion-button {
+  background-color: transparent;
+  color: var(--dark);
+  font-weight: 700;
+  padding: 1.25rem;
+  box-shadow: none !important;
+}
+
+.modern-accordion .accordion-button:not(.collapsed) {
+  color: var(--primary);
+  background-color: transparent;
+}
+
+.modern-accordion .accordion-button::after {
+  background-size: 1rem;
+}
+
+.modern-accordion .accordion-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  padding-top: 0;
+}
+
 .header-carousel .owl-nav {
   position: relative;
   width: 80px;
