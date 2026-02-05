@@ -979,3 +979,50 @@ h1 {
   font-weight: 600;
 }
 
+/*** Contact Info Modern Styles ***/
+.contact-info-list .btn-square {
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover .btn-square {
+  transform: scale(1.1);
+  background-color: var(--light) !important;
+}
+
+.contact-link:hover .btn-square i {
+  color: var(--primary) !important;
+}
+
+.social-btn-modern {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-btn-modern:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(219, 171, 123, 0.3);
+  border-color: var(--primary);
+}
+
+.btn-cookie-settings-link {
+  text-decoration: none !important;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.btn-cookie-settings-link:hover {
+  opacity: 1;
+}
+
