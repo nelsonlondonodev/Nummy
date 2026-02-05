@@ -1017,12 +1017,17 @@ h1 {
 }
 
 .btn-cookie-settings-link {
-  text-decoration: none !important;
-  font-weight: 500;
-  opacity: 0.6;
+  background: transparent;
+  border: none;
+  color: #777; /* Mismo color que el texto del copyright */
+  font-size: 0.85rem;
+  padding: 0;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-cookie-settings-link:hover {
-  opacity: 1;
+  color: var(--primary);
 }
 
