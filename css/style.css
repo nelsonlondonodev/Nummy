@@ -412,8 +412,11 @@ h6,
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 .header-carousel .owl-carousel-item {
@@ -430,7 +433,8 @@ h6,
 }
 
 .owl-carousel-inner .container .row {
-  margin-bottom: 50px; /* Reducido de 35% para mejor centrado visual */
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .hero-description {
@@ -457,6 +461,10 @@ h6,
   .header-carousel .owl-carousel-item p {
     font-size: 1.1rem !important;
     margin-bottom: 2rem !important;
+  }
+
+  .owl-carousel-inner .container {
+    padding-top: 60px; /* Añadido para evitar que el texto suba demasiado cerca del logo en móviles */
   }
 }
 
