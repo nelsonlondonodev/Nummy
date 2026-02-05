@@ -300,7 +300,7 @@ h6,
 }
 
 .mb-2:hover {
-  color: rgb(255, 255, 255) !important;
+  color: var(--dark) !important;
 }
 
 /* ----------- Footer -------------- */
