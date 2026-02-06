@@ -87,6 +87,27 @@
       '<i class="bi bi-chevron-right"></i>',
     ],
   });
+  
+  // Testimonials carousel
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    smartSpeed: 1000,
+    margin: 25,
+    dots: true,
+    loop: true,
+    center: true,
+    responsive: {
+        0:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        992:{
+            items:3
+        }
+    }
+  });
 
   // Facts counter
   $('[data-toggle="counter-up"]').counterUp({
