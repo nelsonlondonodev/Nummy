@@ -1197,10 +1197,11 @@ h1 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra elegante */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
   margin: 15px; /* Espacio para que la sombra no se corte */
-  min-height: 250px; /* Altura mínima para uniformidad */
+  min-height: 280px; /* Altura mínima ajustada */
+  height: 100%; /* Ocupar altura completa */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Alinear contenido arriba */
 }
 
 /* Efecto Hover WOW */
@@ -1227,7 +1228,9 @@ h1 {
 .google-icon-wrapper {
   width: 50px;
   height: 50px;
-  background: rgba(219, 171, 123, 0.1);
+  min-width: 50px; /* Prevenir aplastamiento */
+  background: #fff; /* Fondo blanco para que destaque el logo de Google */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1237,13 +1240,12 @@ h1 {
 }
 
 .testimonial-item:hover .google-icon-wrapper {
-  background: var(--primary);
+  background: #fff;
   transform: rotate(360deg); /* Pequeña animación divertida */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.testimonial-item:hover .google-icon-wrapper i {
-  color: #fff !important;
-}
+
 
 /* Estrellas */
 .text-primary i {
