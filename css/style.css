@@ -281,9 +281,10 @@ h6,
 }
 
 .navbar .navbar-nav .nav-link {
-  padding: 35px 15px;
+  padding: 45px 20px; /* Aumentado padding vertical y horizontal */
   color: var(--light);
   outline: none;
+  font-weight: 600; /* Un poco más de peso visual */
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -326,7 +327,7 @@ h6,
   }
 
   .navbar .navbar-nav .nav-link {
-    padding: 10px 0;
+    padding: 15px 0; /* Más espacio en móvil */
   }
 
   h1 {
