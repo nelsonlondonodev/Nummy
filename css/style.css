@@ -1191,10 +1191,11 @@ h1 {
 
 .testimonial-item {
   position: relative;
-  background: var(--light);
-  border: 1px solid rgba(0, 0, 0, 0.03); /* Borde sutil */
-  border-radius: 20px !important; /* Más redondeado */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra elegante */
+  background: #1f2937; /* Fondo oscuro estilo Tailwind gray-800 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
   margin: 15px; /* Espacio para que la sombra no se corte */
   min-height: 280px; /* Altura mínima ajustada */
@@ -1206,14 +1207,14 @@ h1 {
 
 /* Efecto Hover WOW */
 .testimonial-item:hover {
-  transform: translateY(-10px) scale(1.02); /* Levantar y crecer levemente */
-  box-shadow: 0 20px 40px rgba(219, 171, 123, 0.2); /* Sombra más pronunciada con tono dorado/naranja */
-  border-color: rgba(219, 171, 123, 0.3); /* Borde coloreado al hover */
-  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: #111827; /* Fondo más oscuro al hover */
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .testimonial-item p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   font-style: italic;
   font-size: 1rem;
   line-height: 1.6;
