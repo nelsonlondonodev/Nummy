@@ -22,11 +22,17 @@ Sitio web estático para **Nummy**, una repostería creativa en Getafe, Madrid. 
     *   Cierre automático al hacer clic fuera o en un enlace.
     *   Barra de navegación con mayor cuerpo y legibilidad.
 
-### Funcionalidades
+### Funcionalidades y Optimización
+*   **Optimización de Rendimiento (Web Vitals):**
+    *   **Eliminación de CLS:** Atributos de dimensión en todas las imágenes y altura fija en top-bar.
+    *   **Velocidad de Carga:** Consolidación de fuentes (Nunito), eliminación de `@import` en CSS y uso de `defer` en todos los JavaScripts.
+    *   **Priorización de LCP:** Uso de `fetchpriority="high"` en la imagen hero principal.
+*   **Accesibilidad (A11y):** Implementación de `aria-labels` en todos los elementos interactivos sin texto (botones de imagen, iconos sociales, campos de formulario).
+*   **SEO Técnico:** Unificación de jerarquía de encabezados (un solo H1) y metadatos optimizados.
 *   **Optimización de Imágenes:** Implementación de `loading="lazy"` para mejorar la velocidad de carga (LCP).
-*   **Formulario de Contacto:** Preparado para integración futura con **n8n** (actualmente simula envío).
-*   **Banner de Cookies:** Funcional con almacenamiento en `localStorage`.
-*   **Botón Flotante de WhatsApp:** Acceso directo para contacto rápido.
+*   **Formulario de Contacto:** Preparado para integración futura con **n8n** (actualmente simula envío con feedback visual).
+*   **Banner de Cookies:** Funcional con almacenamiento en `localStorage` y configuración accesible.
+*   **Botón Flotante de WhatsApp:** Acceso directo con etiquetas de accesibilidad.
 
 ### Contenido y SEO
 *   **Sección "About" y "FAQ":** Textos refinados y simplificados. Eliminada la sección de alérgenos por petición del cliente.
@@ -51,8 +57,9 @@ Nummy/
 ```
 
 ## Próximos Pasos (Pendientes)
-*   [ ] **Testimonios:** Corregir la carga de imágenes (SVG logos) y pulir estilos de las tarjetas (consistencia visual, tamaños, espaciados).
-*   [ ] **Refactorización CSS:** Limpiar y organizar `style.css` si crece demasiado.
+*   [x] **Optimización de Rendimiento:** Corregido CLS, mejorado FCP/LCP mediante carga diferida y priorización de assets.
+*   [x] **Accesibilidad:** Implementados aria-labels y corrección de jerarquía H1-H2.
+*   [ ] **Testimonios:** Pulir estilos de las tarjetas (consistencia visual, tamaños, espaciados).
 *   [ ] **Integración n8n:** Conectar el formulario de contacto con el webhook real.
 
 ---

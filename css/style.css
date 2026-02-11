@@ -1,11 +1,14 @@
 /********** Template CSS **********/
 
 /*------- Fuente Tipografica------*/
+/* Nunito cargada vía HTML para mejor rendimiento */
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+.top-bar {
+  height: 40px;
+  overflow: hidden;
+}
 
 /* ----- Fuente de Color ---------/
-
 #372C20  cafe oscuro
 #6B5033  cafe claro
 #CEBFAF  beige oscuro
